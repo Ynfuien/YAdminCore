@@ -1,0 +1,103 @@
+name: '${project.name}'
+version: '${project.version}'
+main: pl.ynfuien.yessentials.YEssentials
+api-version: 1.20
+softdepend: [ PlaceholderAPI, spark ]
+author: Ynfuien
+description: '${project.description}'
+website: '${project.url}'
+
+commands:
+  yessentials:
+    aliases: [yess]
+    description: Plugin's main command
+    permission: yessentials.main
+
+  heal:
+    description: Heals player
+    permission: yessentials.heal
+
+  feed:
+    description: Feeds player
+    permission: yessentials.feed
+
+  item:
+    aliases: [i]
+    description: Gives an item
+    permission: yessentials.item
+
+  memory:
+    aliases: [mem, server]
+    description: Shows information about server memory etc.
+    permission: yessentials.memory
+
+  tp:
+    description: Teleports player to player or location
+    permission: yessentials.tp
+
+  tphere:
+    aliases: [s]
+    description: Teleports player to you
+    permission: yessentials.tphere
+
+  tpoffline:
+    aliases: [offlinetp]
+    description: Teleports to player's logout location
+    permission: yessentials.tpoffline
+
+  back:
+    description: Teleports player back to last location
+    permission: yessentials.back
+
+  god:
+    aliases: [godmode]
+    description: Enables godmode
+    permission: yessentials.god
+
+  gm:
+    aliases: [gamemode]
+    description: Changes your gamemode
+    permission: yessentials.gamemode
+
+  anvil:
+    description: Opens an anvil
+    permission: yessentials.anvil
+
+  cartographytable:
+    description: Opens a cartography table
+    permission: yessentials.cartographytable
+
+  enderchest:
+    aliases: [ec]
+    description: Opens player's enderchest
+    permission: yessentials.enderchest
+
+  grindstone:
+    description: Opens a grindstone
+    permission: yessentials.grindstone
+
+  loom:
+    description: Opens a loom
+    permission: yessentials.loom
+
+  smithingtable:
+    description: Opens a smithing table
+    permission: yessentials.smithingtable
+
+  stonecutter:
+    description: Opens a stonecutter
+    permission: yessentials.stonecutter
+
+  workbench:
+    aliases: [wb, craft]
+    description: Opens a workbench
+    permission: yessentials.workbench
+
+  entity:
+    aliases: [entityinfo, player, playerinfo, whois]
+    description: Gets info about the entity/player
+    permission: yessentials.entity
+
+  fly:
+    description: Toggles fly mode for the player
+    permission: yessentials.fly

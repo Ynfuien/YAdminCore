@@ -1,0 +1,73 @@
+# Database configuration.
+# It's used for saving player data.
+database:
+  # Available types: mysql, sqlite
+  type: 'sqlite'
+  # Table name used both in mysql or sqlite
+  table: 'yess_users'
+
+  # Path for SQLite database file
+  path: 'database.db'
+
+  # Connection info for MySQL database type
+  # Host of your db
+  host: 'localhost'
+  # Default is 3306, don't touch it if you didn't change it in your db configuration
+  port: '3306'
+  # Default: 6
+  max-connections: 6
+  # Name of database
+  name: 'dbname'
+  # Login to db account
+  login: 'user'
+  # Password to db account
+  password: 'password'
+
+commands:
+  heal:
+    heal: true
+    feed: true
+    saturate: true
+    clear-effects: true
+    stop-burning: true
+
+  feed:
+    feed: true
+    saturate: true
+
+  item:
+    # 64 will still be max for any normal item,
+    # but it also will be max for tools, armor, snowball etc.
+    extend-max-stack-size: false
+
+  back:
+    # Teleport causes, that will cause new last location
+    # to be saved. Full list of available causes can be found here:
+    # https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/player/PlayerTeleportEvent.TeleportCause.html
+    teleport-causes:
+      - 'PLUGIN'
+      - 'COMMAND'
+
+  # Entity/player info command
+  entity:
+    # Fields for info message, located in lang.yml. They will be used based
+    # on the permission yessentials.entity.<field-name>.
+    # For example, player with all permissions but 'yessentials.entity.ip',
+    # will see the whole info message, except the line with ip field.
+    # You can change, add and remove these fields.
+    # The order of the lines can be changed in lang.yml
+    fields:
+      displayname: '<#8A8FF5>Display name: <#D6B9F9>{@displayname}'
+      uuid: '<#8A8FF5>UUID: <click:copy_to_clipboard:"{uuid}"><hover:show_text:"<gray>Click to copy!"><#D6B9F9>{uuid}</hover></click>'
+      ip: '<#8A8FF5>IP: <click:copy_to_clipboard:"{ip}"><hover:show_text:"<gray>Click to copy!"><#D6B9F9>{ip}</hover></click>'
+      time: '<#8A8FF5>Time played: <hover:show_text:"<yellow>It is:<br><aqua>{time-total-years} years<br><gray>or <aqua>{time-total-months} months<br><gray>or <aqua>{time-total-weeks} weeks<br><gray>or <aqua>{time-total-days} days<br><gray>or <aqua>{time-total-hours} hours<br><gray>or <aqua>{time-total-minutes} minutes<br><gray>or <aqua>{time-total-seconds} seconds"><#D6B9F9>{time-days}d and {time-hours}h</hover>'
+      health: '<#8A8FF5>Health: <hover:show_text:"<red>{health-hearts}/{health-max-hearts} <gray>hearts"><red>{health-points}/{health-max-points}</hover>'
+      hunger: '<#8A8FF5>Hunger: <hover:show_text:"<#f0df2b>{saturation-points}/{saturation-max-points} <gray>saturation"><#db9927>{hunger-points}/{hunger-max-points}</hover>'
+      location: '<#8A8FF5>Location: <click:suggest_command:"/tp {uuid}"><hover:show_text:"<blue>Coordinates:<br><#64daf5>world: <white>{loc-world}<br><br><#64daf5>x: <white>{loc-x}<br><#64daf5>y: <white>{loc-y}<br><#64daf5>z: <white>{loc-z}<br><br><#64daf5>yaw: <white>{loc-yaw}<br><#64daf5>pitch: <white>{loc-pitch}<br><br><gray>Click to teleport!"><#D6B9F9>{loc-world}, {loc-x}, {loc-y}, {loc-z}</hover></click>'
+      gamemode: '<#8A8FF5>Gamemode: <#D6B9F9>{gamemode}'
+      godmode: '<#8A8FF5>Godmode: {godmode}'
+      op: '<#8A8FF5>Operator: {op}'
+      fly: '<#8A8FF5>Flying: <hover:show_text:"<#8A8FF5>Can fly: {can-fly}">{flying}</hover>'
+#      supercoins: '<#8A8FF5>Supercoins: <dark_purple>%yc_balance_supercoin% SC'
+#      money: '<#8A8FF5>Money: <gold>%vault_eco_balance_formatted%$'
+#      rank: '<#8A8FF5>Rank: <#D6B9F9>%vault_group_capital%'

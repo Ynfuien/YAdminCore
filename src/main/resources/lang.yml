@@ -1,0 +1,248 @@
+##########################
+#                        #
+#  Lang file by Ynfuien  #
+#                        #
+##########################
+
+
+#### Quick info:
+# 1. If you don't want a message to be sent, just set it empty - ''
+
+# 2. You can use MiniMessage formatting for custom colors and formats!
+# If you don't know how, then here is documentation:
+# https://docs.advntr.dev/minimessage/format.html
+
+# 3. PlaceholderAPI is supported
+
+# 4. Plugin placeholders are within curly brackets - {placeholder}
+# And can have additional flags:
+# ! - no formatting
+# @ - no papi
+# # - escaped double quotes (")
+# To use a flag for placeholder, append it before the name - {!placeholder}
+# You can also combine flags, so for example {@#placeholder}, will not parse PAPI placeholders,
+# and will escape double quotes (" will become \").
+# ! - is useful for player input, that is not supposed to be formatted
+# @ - for input that's supposed to be formatted, but not with papi
+# # - for things that can contain double quotes, and you want them in hover/click event
+
+
+# Prefix that will be used for {prefix} placeholder
+prefix: '<dark_aqua>[<bold><aqua>Y<red>Essentials</bold><dark_aqua>]<reset>'
+
+plugin-is-reloading: '{prefix} <red>Plugin is reloading, wait a second..'
+
+commands-incorrect: '{prefix} <red>Incorrect command! Use /{command} help, for help.'
+commands-no-permission: '{prefix} <red>You don''t have permission for this command!'
+
+# Main
+command-main-help: '{prefix} <aqua>Avaiable commands: /{command} <reload | help>.'
+
+command-main-reload-fail: '{prefix} <red>An error occurred while reloading plugin. Take a look in the console for more information!'
+command-main-reload-success: '{prefix} <aqua>Plugin was <green>successfully <aqua>reloaded!'
+
+command-main-version: '{prefix} <dark_aqua><bold>Plugin info:</bold><newline>{prefix} <aqua>Name: <white>{name}<newline>{prefix} <aqua>Version: <green>{version}<newline>{prefix} <aqua>Author: <click:open_url:"{website}"><hover:show_text:"{website}"><white>{author}</click>'
+
+# Heal
+command-heal-fail-need-player: '{prefix} <red>You need to be a player, to heal yourself! Use /{command} <player>, to heal another player.'
+command-heal-fail-player-doesnt-exist: '{prefix} <red>Provided player doesn''t exist!'
+command-heal-success-yourself: '{prefix} <aqua>You <green>successfully <aqua>healed yourself!'
+command-heal-success-another-player: '{prefix} <green>Successfully <aqua>healed <dark_aqua>{player-username}<aqua>!'
+command-heal-success-receive: '{prefix} <aqua>You had been <green>healed<aqua>!'
+
+# Feed
+command-feed-fail-need-player: '{prefix} <red>You need to be a player, to feed yourself! Use /{command} <player>, to feed another player.'
+command-feed-fail-player-doesnt-exist: '{prefix} <red>Provided player doesn''t exist!'
+command-feed-success-yourself: '{prefix} <aqua>You <green>successfully <aqua>feed yourself!'
+command-feed-success-another-player: '{prefix} <green>Successfully <aqua>feed <dark_aqua>{player-username}<aqua>!'
+command-feed-success-receive: '{prefix} <aqua>You had been <green>feed<aqua>!'
+
+# Item
+command-item-usage: '{prefix} <red>Command usage: /{command} <item> [amount]'
+command-item-fail-item-doesnt-exist: '{prefix} <red>Provided item doesn''t exist!'
+command-item-fail-item-unobtainable: '{prefix} <red>This item can''t be obtained!'
+command-item-fail-not-player: '{prefix} <red>You need to be a player, to use this command!'
+command-item-fail-incorrect-amount: '{prefix} <red>Provided amount is incorrect!'
+command-item-success: '{prefix} <aqua>You just got yourself <dark_aqua>{amount} <aqua>of <dark_aqua>{item}<aqua>!'
+
+# Memory
+command-memory:
+  - '{prefix} <gold>Info about server:'
+  - '<yellow>Uptime: <white><hover:show_text:"<gray>Days: <white>{days}<newline><gray>Hours: <white>{hours}<newline><gray>Minutes: <white>{minutes}<newline><gray>Seconds: <white>{seconds}">{uptime}</hover>'
+  - '<yellow>TPS: <white>{tps}/20'
+  - '<yellow>Memory: <hover:show_text:"<dark_gray>Used memory: <gray>{used-memory}M<newline><dark_gray>Free memory: <gray>{free-memory}M<newline><dark_gray>Max memory: <gray>{max-memory}M<newline><dark_gray>Allocated memory: <gray>{allocated-memory}M"><white>{used-memory}M/{max-memory}M <gray>({allocated-memory}M)</hover>'
+# Uncomment this line, if you have Spark installed:
+#  - '<yellow>Cpu usage: <white>{cpu}%'
+command-memory-uptime-seconds: '{seconds} second(s)'
+command-memory-uptime-minutes: '{minutes} minute(s) and {seconds} second(s)'
+command-memory-uptime-hours: '{hours} hour(s) and {minutes} minute(s)'
+command-memory-uptime-days: '{days} day(s) and {hours} hour(s)'
+
+# Tp
+command-tp-usage: '{prefix} <gray>Use /{command} <player | location>, to teleport to a player or location!'
+command-tp-usage-player-to-player: '{prefix} <gray>Use /{command} <player> <player | location>, to teleport a player to another player or location!'
+command-tp-fail: '{prefix} <red>Something went wrong while teleporting...'
+command-tp-fail-only-player: '{prefix} <red>You need to be a player, to teleport yourself! Use /{command} <player> <player | location>, to teleport one player to another player or location.'
+command-tp-fail-selector-no-targets: '{prefix} <red>Selector couldn''t find any entities!'
+command-tp-fail-selector-no-destination: '{prefix} <red>Provided selector didn''t select any destination!'
+command-tp-fail-selector-many-destinations: '{prefix} <red>Selected many destinations, there can only be one!'
+command-tp-fail-selector-target-doesnt-exist: '{prefix} <red>Provided target doesn''t exist!'
+command-tp-fail-selector-destination-doesnt-exist: '{prefix} <red>Provided destination doesn''t exist!'
+command-tp-fail-player-doesnt-exist: '{prefix} <red>Player <dark_red>{!player} <red>doesn''t exist or isn''t online!'
+command-tp-fail-invalid-location-argument: '{prefix} <red>Location argument <dark_red>{!argument} <red>is incorrect!'
+command-tp-success: '{prefix} <green>Successfully <aqua>teleported to <click:copy_to_clipboard:"{destination-uuid}"><hover:show_text:"<gray>{destination-uuid}"><dark_aqua>{destination-name}</hover></click><aqua>!'
+command-tp-success-selector: '{prefix} <aqua>Teleported <click:copy_to_clipboard:"{target-uuid}"><hover:show_text:"<gray>{target-uuid}"><dark_aqua>{target-name}</hover></click> <aqua>to <click:copy_to_clipboard:"{destination-uuid}"><hover:show_text:"<gray>{destination-uuid}"><dark_aqua>{destination-name}</hover></click><aqua>!'
+command-tp-success-selector-many: '{prefix} <aqua>Teleported <dark_aqua>{target-count} entities <aqua>to <click:copy_to_clipboard:"{destination-uuid}"><hover:show_text:"<gray>{destination-uuid}"><dark_aqua>{destination-name}</hover></click><aqua>!'
+command-tp-success-location: '{prefix} <aqua>Teleported to <dark_aqua><click:copy_to_clipboard:"{x} {y} {z}"><hover:show_text:"<blue>Coordinates:<br><#64daf5>x: <white>{x}<br><#64daf5>y: <white>{y}<br><#64daf5>z: <white>{z}<br><br><#64daf5>yaw: <white>{yaw}<br><#64daf5>pitch: <white>{pitch}<br><br><gray>Click to copy!">{x}, {y}, {z}</hover></click><aqua>!'
+command-tp-success-many-to-location: '{prefix} <aqua>Teleported <dark_aqua>{target-count} entities <aqua>to <dark_aqua><click:copy_to_clipboard:"{x} {y} {z}"><hover:show_text:"<blue>Coordinates:<br><#64daf5>x: <white>{x}<br><#64daf5>y: <white>{y}<br><#64daf5>z: <white>{z}<br><br><#64daf5>yaw: <white>{yaw}<br><#64daf5>pitch: <white>{pitch}<br><br><gray>Click to copy!">{x}, {y}, {z}</hover></click><aqua>!'
+command-tp-success-entity-to-location: '{prefix} <aqua>Teleported <click:copy_to_clipboard:"{target-uuid}"><hover:show_text:"<gray>{target-uuid}"><dark_aqua>{target-name}</hover></click> <aqua>to <dark_aqua><click:copy_to_clipboard:"{x} {y} {z}"><hover:show_text:"<blue>Coordinates:<br><#64daf5>x: <white>{x}<br><#64daf5>y: <white>{y}<br><#64daf5>z: <white>{z}<br><br><#64daf5>yaw: <white>{yaw}<br><#64daf5>pitch: <white>{pitch}<br><br><gray>Click to copy!">{x}, {y}, {z}</hover></click><aqua>!'
+command-tp-success-receive-location: '{prefix} <aqua>You had been teleported to <dark_aqua><click:copy_to_clipboard:"{x} {y} {z}"><hover:show_text:"<blue>Coordinates:<br><#64daf5>x: <white>{x}<br><#64daf5>y: <white>{y}<br><#64daf5>z: <white>{z}<br><br><#64daf5>yaw: <white>{yaw}<br><#64daf5>pitch: <white>{pitch}<br><br><gray>Click to copy!">{x}, {y}, {z}</hover></click><aqua>!'
+command-tp-success-receive-selector: '{prefix} <aqua>You had been teleported to <click:copy_to_clipboard:"{destination-uuid}"><hover:show_text:"<gray>{destination-uuid}"><dark_aqua>{destination-name}</hover></click><aqua>!'
+
+# Tphere
+command-tphere-usage: '{prefix} <gray>Use /{command} <player>, to teleport a player to you!'
+command-tphere-fail: '{prefix} <red>Something went wrong while teleporting...'
+command-tphere-fail-need-player: '{prefix} <red>You need to be a player, to teleport another player to you!'
+command-tphere-fail-player-doesnt-exist: '{prefix} <red>Provided player doesn''t exist!'
+command-tphere-success: '{prefix} <green>Successfully <aqua>teleported <dark_aqua>{player-username} <aqua>to you!'
+command-tphere-success-receive: '{prefix} <aqua>You had been teleported to <dark_aqua>{executor-username}<aqua>!'
+
+# Tpoffline
+command-tpoffline-usage: '{prefix} <gray>Use /{command} <player>, to teleport to player''s logout location!'
+command-tpoffline-fail: '{prefix} <red>Something went wrong while teleporting...'
+command-tpoffline-fail-no-logout-location: '{prefix} <red>This player hasn''t logged out yet!'
+command-tpoffline-fail-only-player: '{prefix} <red>You need to be a player, to use this command!'
+command-tpoffline-fail-player-doesnt-exist: '{prefix} <red>Provided player was never on the server!'
+command-tpoffline-success: '{prefix} <aqua>Teleported to <dark_aqua>{player-username}''s <aqua>logout location!'
+
+# Back
+command-back-fail: '{prefix} <red>Something went wrong while teleporting back...'
+command-back-fail-no-last-location: '{prefix} <red>There is no saved last location to use!'
+command-back-fail-only-player: '{prefix} <red>You need to be a player, to teleport yourself back! Use /{command} <player>, to teleport back a player.'
+command-back-fail-player-doesnt-exist: '{prefix} <red>Provided player doesn''t exist!'
+command-back-success: '{prefix} <green>Successfully <aqua>teleported back!'
+command-back-success-other: '{prefix} <green>Successfully <aqua>teleported back <dark_aqua>{player-username}<aqua>!'
+command-back-success-receive: '{prefix} <aqua>You had been teleported back<aqua>!'
+
+# God
+command-god-fail-need-player: '{prefix} <red>You need to be a player, to use godmode!'
+command-god-fail-player-doesnt-exist: '{prefix} <red>Provided player doesn''t exist!'
+command-god-success: '{prefix} <aqua>You {action} <aqua>godmode!'
+command-god-success-other: '{prefix} <aqua>Successfully {action} <aqua>godmode for <dark_aqua>{player-username}<aqua>!'
+command-god-success-receive: '{prefix} <aqua>Your godmode has been {action}<aqua>!'
+command-god-enabled: '<green>enabled'
+command-god-disabled: '<red>disabled'
+
+# Gamemode
+command-gm-usage: '{prefix} <gray>Use /{command} <gamemode>, to change gamemode!'
+command-gm-usage-other: '{prefix} <gray>Use /{command} <gamemode> <player>, to change other player''s gamemode!'
+command-gm-fail-need-player: '{prefix} <red>You need to be a player, to change gamemode!'
+command-gm-fail-player-doesnt-exist: '{prefix} <red>Provided player doesn''t exist!'
+command-gm-fail-incorrect-gamemode: '{prefix} <red>Provided gamemode is incorrect!'
+command-gm-fail-no-permission: '{prefix} <red>You don''t have permission for <dark_red>{gamemode} <red>gamemode!'
+command-gm-success: '{prefix} <aqua>You changed your gamemode to <dark_aqua>{gamemode}<aqua>!'
+command-gm-success-other: '{prefix} <aqua>You changed <dark_aqua>{player-username}''s <aqua>gamemode to <dark_aqua>{gamemode}<aqua>!'
+command-gm-success-receive: '{prefix} <aqua>Your gamemode has been changed to <dark_aqua>{gamemode}<aqua>!'
+command-gm-survival: 'survival'
+command-gm-creative: 'creative'
+command-gm-adventure: 'adventure'
+command-gm-spectator: 'spectator'
+
+# Inventory commands like craft, enchant, anvil etc.
+command-inventories-fail-only-player: '{prefix} <red>You need to be a player, to use this command!'
+
+# Itemname
+command-itemname-usage: '{prefix} <gray>Command usage: /{command} <new name>'
+command-itemname-info:
+  - '{prefix} <yellow>Item name info:'
+  - '<aqua>Formatted: <click:copy_to_clipboard:"{@#name-minimessage}"><hover:show_text:"<gray>Click to copy!"><white>{@name-minimessage}</hover></click>'
+  - '<aqua>Unformatted: <click:copy_to_clipboard:"{@#name-legacy}"><hover:show_text:"<gray>{!name-legacy}"><dark_aqua>(Hover)</hover></click>'
+  - '<aqua>Signature: <click:copy_to_clipboard:"{signature-uuid}"><hover:show_text:"<gray>{signature-uuid}"><#41facf>{signature-username}</hover></click>'
+  - '<gray>Use /{command} <new name>, to change the name.'
+command-itemname-info-no-name: '{prefix} <gray>Item doesn''t have custom name set, use /{command} <new name>, to change the name.'
+command-itemname-fail-only-player: '{prefix} <red>You need to be a player, to use this command!'
+command-itemname-fail-no-item: '{prefix} <red>You need to hold an item to rename it!'
+command-itemname-success: '{prefix} <aqua>Changed item''s name to <white>{@name-minimessage}<reset><aqua>!'
+command-itemname-success-reset: '{prefix} <aqua>Held item''s name has been reset!'
+
+# Itemlore
+command-itemlore-usage: '{prefix} <gray>Command usage: /{command} <show | add | set | remove> [line number] [lore]'
+command-itemlore-fail-only-player: '{prefix} <red>You need to be a player, to use this command!'
+command-itemlore-fail-no-item: '{prefix} <red>You need to hold an item to change it''s lore!'
+command-itemlore-fail-add-no-lore: '{prefix} <red>Provide the lore that you want to add!'
+command-itemlore-fail-add-reach-limit: '{prefix} <red>Next line would exceed the limit of <dark_red>{limit} <red>lines!'
+command-itemlore-fail-set-no-lore: '{prefix} <red>Provide the lore that you want to set!'
+command-itemlore-fail-set-no-number: '{prefix} <red>Provide the line number that you want to change!'
+command-itemlore-fail-set-reach-limit: '{prefix} <red>Line number can''t be higher than <dark_red>{limit}<red>!'
+command-itemlore-fail-remove-no-number: '{prefix} <red>Provide the line number that you want to remove!'
+command-itemlore-fail-remove-line-doesnt-exist: '{prefix} <red>This item''s lore doesn''t have that line!'
+command-itemlore-fail-incorrect-number: '{prefix} <red>Provided line number is incorrect!'
+command-itemlore-fail-no-lore: '{prefix} <red>This item has no lore!'
+command-itemlore-confirm-clear: '{prefix} <gray>Type <red>/{command} clear -y <gray>to confirm!'
+command-itemlore-success-add: '{prefix} <aqua>Added line <dark_purple><italic>{@line-text} <reset><aqua>to item''s lore!'
+command-itemlore-success-add-empty: '{prefix} <aqua>Added an <dark_aqua>empty line <aqua>to item''s lore!'
+command-itemlore-success-remove: '{prefix} <aqua>Removed <dark_aqua><hover:show_text:"<dark_purple><italic>{@#line-text}">line {line-number}</hover> <aqua>from item''s lore!'
+command-itemlore-success-set: '{prefix} <aqua>Set <dark_aqua>line {line-number} <aqua>of item''s lore to <dark_purple><italic>{@line-text}<reset><aqua>!'
+command-itemlore-success-set-empty: '{prefix} <aqua>Set <dark_aqua>line {line-number} <aqua>of item''s lore to an emptiness!'
+command-itemlore-success-clear: '{prefix} <aqua>Item''s lore has been cleared!'
+command-itemlore-show-header: '{prefix} <yellow>Item''s lore:'
+command-itemlore-show-line: '<gray>{line-number}. <click:copy_to_clipboard:"{@#line-text-legacy}"><hover:show_text:"{!line-text-legacy}"><dark_purple><italic>{@line-text-minimessage}</hover></click>'
+
+# Signedit
+command-editsign-usage: '{prefix} <gray>Command usage: /{command} <show | set | clear> [line number] [text]'
+command-editsign-fail-only-player: '{prefix} <red>You need to be a player, to use this command!'
+command-editsign-fail-no-sign: '{prefix} <red>You need to look at a sign to edit it!'
+command-editsign-fail-set-no-number: '{prefix} <red>Provide the number of the line that you want to set!'
+command-editsign-fail-set-no-text: '{prefix} <red>Provide the text that you want to set!'
+command-editsign-fail-set-above-limit: '{prefix} <red>Text can''t be longer than <dark_red>{line-limit} <red>characters!'
+command-editsign-fail-clear-no-number: '{prefix} <red>Provide the number of the line that you want to clear!'
+command-editsign-fail-clear-empty: '{prefix} <red>This line is already empty!'
+command-editsign-fail-incorrect-number: '{prefix} <red>Provided line number is incorrect!'
+command-editsign-success-set: '{prefix} <aqua>Set <dark_aqua>line {line-number} <aqua>of the sign to <white>{@line-text}<reset><aqua>!'
+command-editsign-success-clear: '{prefix} <aqua>Cleared <dark_aqua><hover:show_text:"<white>{@#line-text}">line {line-number}</hover> <aqua>of the sign!'
+command-editsign-show-header: '{prefix} <yellow>Sign lines:'
+command-editsign-show-line: '<gray>{line-number}. <click:copy_to_clipboard:"{@#line-text-legacy}"><hover:show_text:"{!line-text-legacy}"><white>{@line-text-minimessage}</hover></click>'
+
+# Entity
+command-entity-usage: '{prefix} <gray>Use /{command} <player | uuid>, to check their informations!'
+command-entity-fail-selector-no-targets: '{prefix} <red>Selector couldn''t find any entities!'
+command-entity-fail-selector-many-targets: '{prefix} <red>Selected many targets, there can only be one!'
+command-entity-fail-selector-target-doesnt-exist: '{prefix} <red>Provided target doesn''t exist!'
+command-entity-fail-player-doesnt-exist: '{prefix} <red>Player <dark_red>{!player} <red>doesn''t exist or isn''t online!'
+# You can change fields in config.yml.
+# Here you can change line order, add and remove new ones.
+command-entity-info-player:
+  - '{prefix} <yellow>Player''s info:'
+  - '<#8A8FF5>Username: <#D6B9F9>{name}'
+  - '{field-displayname}'
+#  - '{field-rank}'
+  - '{field-uuid}'
+  - '{field-ip}'
+  - '{field-time}'
+#  - '{field-money}'
+#  - '{field-supercoins}'
+  - '{field-health}'
+  - '{field-hunger}'
+  - '{field-location}'
+  - '{field-gamemode}'
+  - '{field-godmode}'
+  - '{field-op}'
+  - '{field-fly}'
+command-entity-info-other:
+  - '{prefix} <yellow>Entity''s info:'
+  - '<#8A8FF5>Name: <#D6B9F9>{name}'
+  - '{field-displayname}'
+  - '{field-uuid}'
+  - '{field-health}'
+  - '{field-location}'
+command-entity-info-placeholder-true: '<green>yes'
+command-entity-info-placeholder-false: '<red>no'
+
+# Fly
+command-fly-fail-need-player: '{prefix} <red>You need to be a player, to use fly!'
+command-fly-fail-player-doesnt-exist: '{prefix} <red>Provided player doesn''t exist!'
+command-fly-success: '{prefix} <aqua>Fly mode {action}<aqua>!'
+command-fly-success-other: '{prefix} <aqua>Successfully {action} <aqua>fly mode for <dark_aqua>{player-username}<aqua>!'
+command-fly-success-receive: '{prefix} <aqua>Your fly mode has been {action}<aqua>!'
+command-fly-enabled: '<green>enabled'
+command-fly-disabled: '<red>disabled'
