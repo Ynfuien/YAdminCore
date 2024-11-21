@@ -3,7 +3,6 @@ package pl.ynfuien.yessentials.config;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
-import pl.ynfuien.yessentials.utils.YLogger;
 
 import java.util.ArrayList;
 import java.util.HashMap;

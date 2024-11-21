@@ -6,7 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import org.bukkit.Location;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import pl.ynfuien.yessentials.utils.YLogger;
+import pl.ynfuien.ydevlib.messages.YLogger;
 
 import java.lang.reflect.Type;
 import java.util.Map;

@@ -1,10 +1,10 @@
 package pl.ynfuien.yessentials.hooks;
 
 import org.bukkit.Bukkit;
+import pl.ynfuien.ydevlib.messages.YLogger;
 import pl.ynfuien.yessentials.YEssentials;
 import pl.ynfuien.yessentials.hooks.placeholderapi.PlaceholderAPIHook;
 import pl.ynfuien.yessentials.hooks.spark.SparkHook;
-import pl.ynfuien.yessentials.utils.YLogger;
 
 public class Hooks {
     private static PlaceholderAPIHook papiHook = null;

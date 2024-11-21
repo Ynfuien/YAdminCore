@@ -6,6 +6,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import pl.ynfuien.ydevlib.messages.YLogger;
 import pl.ynfuien.yessentials.commands.*;
 import pl.ynfuien.yessentials.commands.inventories.*;
 import pl.ynfuien.yessentials.commands.main.MainCommand;
@@ -22,7 +23,6 @@ import pl.ynfuien.yessentials.listeners.PlayerJoinListener;
 import pl.ynfuien.yessentials.listeners.PlayerQuitListener;
 import pl.ynfuien.yessentials.listeners.PlayerTeleportListener;
 import pl.ynfuien.yessentials.utils.Lang;
-import pl.ynfuien.yessentials.utils.YLogger;
 
 import java.util.HashMap;
 import java.util.List;

@@ -2,10 +2,10 @@ package pl.ynfuien.yessentials.hooks.placeholderapi.placeholders;
 
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
+import pl.ynfuien.ydevlib.utils.DoubleFormatter;
 import pl.ynfuien.yessentials.data.Storage;
 import pl.ynfuien.yessentials.data.User;
 import pl.ynfuien.yessentials.hooks.placeholderapi.Placeholder;
-import pl.ynfuien.yessentials.utils.DoubleFormatter;
 
 public class UserPlaceholders implements Placeholder {
     private static final DoubleFormatter df = new DoubleFormatter();

@@ -6,7 +6,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import pl.ynfuien.yessentials.config.updater.ConfigUpdater;
-import pl.ynfuien.yessentials.utils.YLogger;
 
 import java.io.File;
 import java.io.IOException;

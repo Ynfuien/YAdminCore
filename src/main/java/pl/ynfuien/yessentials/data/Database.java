@@ -3,7 +3,7 @@ package pl.ynfuien.yessentials.data;
 import com.zaxxer.hikari.HikariDataSource;
 import org.bukkit.configuration.ConfigurationSection;
 import org.json.simple.JSONObject;
-import pl.ynfuien.yessentials.utils.YLogger;
+import pl.ynfuien.ydevlib.messages.YLogger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

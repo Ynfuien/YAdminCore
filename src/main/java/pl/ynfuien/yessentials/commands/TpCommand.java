@@ -14,10 +14,9 @@ import org.bukkit.util.RayTraceResult;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import pl.ynfuien.ydevlib.utils.DoubleFormatter;
 import pl.ynfuien.yessentials.YEssentials;
-import pl.ynfuien.yessentials.utils.DoubleFormatter;
 import pl.ynfuien.yessentials.utils.Lang;
-import pl.ynfuien.yessentials.utils.Messenger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,6 +31,9 @@ public class TpCommand extends YCommand {
     private final static String PERMISSION_USE_SELECTORS = PERMISSION_BASE + ".selectors";
 
     private static final Pattern locationArgPattern = Pattern.compile("^[\\d\\-\\.,~]+$");
+
+    private static final DoubleFormatter df = new DoubleFormatter().setMaxDecimalPlaces(2);
+
 
     public TpCommand(YEssentials instance) {
         super(instance);
@@ -331,7 +333,6 @@ public class TpCommand extends YCommand {
         }
     }
 
-    private static final DoubleFormatter df = new DoubleFormatter().setMaxDecimalPlaces(2);
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
         List<String> completions = new ArrayList<>();
