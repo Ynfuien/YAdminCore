@@ -6,13 +6,13 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import pl.ynfuien.ydevlib.config.ConfigHandler;
+import pl.ynfuien.ydevlib.config.ConfigObject;
 import pl.ynfuien.ydevlib.messages.YLogger;
 import pl.ynfuien.yessentials.commands.*;
 import pl.ynfuien.yessentials.commands.inventories.*;
 import pl.ynfuien.yessentials.commands.main.MainCommand;
-import pl.ynfuien.yessentials.config.ConfigHandler;
 import pl.ynfuien.yessentials.config.ConfigName;
-import pl.ynfuien.yessentials.config.ConfigObject;
 import pl.ynfuien.yessentials.data.Database;
 import pl.ynfuien.yessentials.data.MysqlDatabase;
 import pl.ynfuien.yessentials.data.SqliteDatabase;
@@ -42,7 +42,7 @@ public final class YEssentials extends JavaPlugin {
 
         loadConfigs();
         loadLang();
-        config = configHandler.get(ConfigName.CONFIG);
+        config = configHandler.getConfigObject(ConfigName.CONFIG);
 
         ConfigurationSection dbConfig = config.getConfig().getConfigurationSection("database");
         database = getDatabase(dbConfig);

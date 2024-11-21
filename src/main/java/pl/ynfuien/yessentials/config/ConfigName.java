@@ -1,10 +1,16 @@
 package pl.ynfuien.yessentials.config;
 
-public enum ConfigName {
+import pl.ynfuien.ydevlib.config.ConfigObject;
+
+public enum ConfigName implements ConfigObject.Name {
     LANG,
     CONFIG;
 
-    String getFileName() {
-        return name().toLowerCase().replace('_', '-') + ".yml";
+    @Override
+    public String getFileName() {
+        return name()
+                .toLowerCase()
+                .replace("__", "/")
+                .replace('_', '-') + ".yml";
     }
 }
