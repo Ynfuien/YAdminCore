@@ -25,18 +25,18 @@ public class UserPlaceholders implements Placeholder {
             return user.isGodModeEnabled() ? "yes" : "no";
         }
 
-        // Placeholder: %yadmincore_user_lastlocation%
+        // Placeholder: %yadmincore_user_last-location%
         // Returns: last location before a teleport
-        if (id.equals("lastlocation")) {
+        if (id.equals("last-location")) {
             Location loc = user.getLastLocation();
             if (loc == null) return "none";
 
             return formatLocation(loc);
         }
 
-        // Placeholder: %yadmincore_user_logoutlocation%
+        // Placeholder: %yadmincore_user_logout-location%
         // Returns: last logout location
-        if (id.equals("logoutlocation")) {
+        if (id.equals("logout-location")) {
             Location loc = user.getLogoutLocation();
             if (loc == null) return "none";
 
