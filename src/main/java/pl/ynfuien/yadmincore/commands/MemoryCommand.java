@@ -6,10 +6,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import pl.ynfuien.ydevlib.utils.DoubleFormatter;
 import pl.ynfuien.yadmincore.YAdminCore;
 import pl.ynfuien.yadmincore.hooks.spark.SparkHook;
 import pl.ynfuien.yadmincore.utils.Lang;
+import pl.ynfuien.ydevlib.utils.DoubleFormatter;
 
 import java.lang.management.ManagementFactory;
 import java.time.Duration;

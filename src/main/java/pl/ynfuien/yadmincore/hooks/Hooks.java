@@ -1,10 +1,10 @@
 package pl.ynfuien.yadmincore.hooks;
 
 import org.bukkit.Bukkit;
-import pl.ynfuien.ydevlib.messages.YLogger;
 import pl.ynfuien.yadmincore.YAdminCore;
 import pl.ynfuien.yadmincore.hooks.placeholderapi.PlaceholderAPIHook;
 import pl.ynfuien.yadmincore.hooks.spark.SparkHook;
+import pl.ynfuien.ydevlib.messages.YLogger;
 
 public class Hooks {
     private static PlaceholderAPIHook papiHook = null;

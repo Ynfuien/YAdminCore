@@ -3,8 +3,8 @@ package pl.ynfuien.yadmincore.data;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.bukkit.configuration.ConfigurationSection;
-import pl.ynfuien.ydevlib.messages.YLogger;
 import pl.ynfuien.yadmincore.YAdminCore;
+import pl.ynfuien.ydevlib.messages.YLogger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

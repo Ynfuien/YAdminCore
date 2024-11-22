@@ -5,9 +5,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerTeleportEvent;
-import pl.ynfuien.ydevlib.messages.YLogger;
 import pl.ynfuien.yadmincore.YAdminCore;
 import pl.ynfuien.yadmincore.data.Storage;
+import pl.ynfuien.ydevlib.messages.YLogger;
 
 import java.util.ArrayList;
 import java.util.List;

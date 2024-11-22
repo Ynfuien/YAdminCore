@@ -9,9 +9,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import pl.ynfuien.ydevlib.utils.DoubleFormatter;
 import pl.ynfuien.yadmincore.YAdminCore;
 import pl.ynfuien.yadmincore.utils.Lang;
+import pl.ynfuien.ydevlib.utils.DoubleFormatter;
 
 import java.util.ArrayList;
 import java.util.Collection;
