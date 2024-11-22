@@ -33,8 +33,6 @@ public final class YEssentials extends JavaPlugin {
     private ConfigObject config;
     private Database database = null;
 
-    private boolean reloading = false;
-
     @Override
     public void onEnable() {
         instance = this;
@@ -136,8 +134,6 @@ public final class YEssentials extends JavaPlugin {
     }
 
     public boolean reloadPlugin() {
-        reloading = true;
-
         // Reload all configs
         configHandler.reloadAll();
 
@@ -145,13 +141,7 @@ public final class YEssentials extends JavaPlugin {
 
         // Reload lang
         instance.loadLang();
-
-        reloading = false;
         return true;
-    }
-
-    public boolean isReloading() {
-        return reloading;
     }
 
     public static YEssentials getInstance() {

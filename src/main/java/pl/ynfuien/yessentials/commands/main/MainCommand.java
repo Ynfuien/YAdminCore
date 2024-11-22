@@ -27,12 +27,6 @@ public class MainCommand implements CommandExecutor, TabCompleter {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         HashMap<String, Object> placeholders = new HashMap<>() {{put("command", label);}};
 
-        // Return if plugin is reloading
-        if (YEssentials.getInstance().isReloading()) {
-            Lang.Message.PLUGIN_IS_RELOADING.send(sender, placeholders);
-            return true;
-        }
-
         // Run help subcommand if none is provided
         if (args.length == 0) {
             helpCommand.run(sender, args, placeholders);
@@ -62,7 +56,6 @@ public class MainCommand implements CommandExecutor, TabCompleter {
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
         List<String> completions = new ArrayList<>();
 
-        if (YEssentials.getInstance().isReloading()) return completions;
         if (args.length == 0) return completions;
 
 
