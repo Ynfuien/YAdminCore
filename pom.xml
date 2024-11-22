@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.ynfuien</groupId>
-    <artifactId>YEssentials</artifactId>
+    <artifactId>YAdminCore</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>YEssentials</name>
-    <description>Essential things that should be on the server</description>
-    <url>https://modrinth.com/project/yessentials</url>
+    <name>YAdminCore</name>
+    <description>Essential things that should be available for admins</description>
+    <url>https://modrinth.com/project/yadmincore</url>
 
     <properties>
         <java.version>17</java.version>
@@ -64,17 +64,17 @@
                                 <!--    HikariCP    -->
                                 <relocation>
                                     <pattern>com.zaxxer.hikari</pattern>
-                                    <shadedPattern>pl.ynfuien.yessentials.libs.hikari</shadedPattern>
+                                    <shadedPattern>pl.ynfuien.yadmincore.libs.hikari</shadedPattern>
                                 </relocation>
                                 <!--    Dev library    -->
                                 <relocation>
                                     <pattern>pl.ynfuien.ydevlib</pattern>
-                                    <shadedPattern>pl.ynfuien.yvanish.libs.ydevlib</shadedPattern>
+                                    <shadedPattern>pl.ynfuien.yadmincore.libs.ydevlib</shadedPattern>
                                 </relocation>
                                 <!--    BStats    -->
                                 <relocation>
                                     <pattern>org.bstats</pattern>
-                                    <shadedPattern>pl.ynfuien.yvanish.libs.bstats</shadedPattern>
+                                    <shadedPattern>pl.ynfuien.yadmincore.libs.bstats</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>

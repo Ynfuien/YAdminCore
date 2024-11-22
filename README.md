@@ -1,4 +1,4 @@
-# YEssentials
+# YAdminCore
 Plugin with, in my opinion, essential commands for the server. Made for **1.20.2**, but should also work on higher versions.
 Plugin requires at least [Paper](https://github.com/PaperMC/Paper), won't work on Spigot nor Bukkit.
 
@@ -24,4 +24,4 @@ Plugin requires at least [Paper](https://github.com/PaperMC/Paper), won't work o
 ![chat formatting](https://i.imgur.com/HKyHemA.gif)
 
 # License
-This project uses [GNU GPLv3](https://github.com/Ynfuien/YEssentials/main/blob/LICENSE) license.
+This project uses [GNU GPLv3](https://github.com/Ynfuien/YAdminCore/main/blob/LICENSE) license.

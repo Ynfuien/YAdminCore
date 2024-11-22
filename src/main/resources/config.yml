@@ -4,7 +4,7 @@ database:
   # Available types: mysql, sqlite
   type: 'sqlite'
   # Table name used both in mysql or sqlite
-  table: 'yess_users'
+  table: 'yac_users'
 
   # Path for SQLite database file
   path: 'database.db'
@@ -51,8 +51,8 @@ commands:
   # Entity/player info command
   entity:
     # Fields for info message, located in lang.yml. They will be used based
-    # on the permission yessentials.entity.<field-name>.
-    # For example, player with all permissions but 'yessentials.entity.ip',
+    # on the permission yadmincore.entity.<field-name>.
+    # For example, player with all permissions but 'yadmincore.entity.ip',
     # will see the whole info message, except the line with ip field.
     # You can change, add and remove these fields.
     # The order of the lines can be changed in lang.yml
