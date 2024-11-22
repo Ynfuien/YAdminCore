@@ -71,8 +71,9 @@ command-memory:
   - '<yellow>Uptime: <white><hover:show_text:"<gray>Days: <white>{days}<newline><gray>Hours: <white>{hours}<newline><gray>Minutes: <white>{minutes}<newline><gray>Seconds: <white>{seconds}">{uptime}</hover>'
   - '<yellow>TPS: <white>{tps}/20'
   - '<yellow>Memory: <hover:show_text:"<dark_gray>Used memory: <gray>{used-memory}M<newline><dark_gray>Free memory: <gray>{free-memory}M<newline><dark_gray>Max memory: <gray>{max-memory}M<newline><dark_gray>Allocated memory: <gray>{allocated-memory}M"><white>{used-memory}M/{max-memory}M <gray>({allocated-memory}M)</hover>'
-# Uncomment this line, if you have Spark installed:
-#  - '<yellow>Cpu usage: <white>{cpu}%'
+  - '{cpu}'
+command-memory-cpu-spark-enabled: '<yellow>Cpu usage: <white>{cpu-usage}%'
+command-memory-cpu-spark-disabled: ''
 command-memory-uptime-seconds: '{seconds} second(s)'
 command-memory-uptime-minutes: '{minutes} minute(s) and {seconds} second(s)'
 command-memory-uptime-hours: '{hours} hour(s) and {minutes} minute(s)'
@@ -210,11 +211,11 @@ command-entity-fail-selector-many-targets: '{prefix} <red>Selected many targets,
 command-entity-fail-selector-target-doesnt-exist: '{prefix} <red>Provided target doesn''t exist!'
 command-entity-fail-player-doesnt-exist: '{prefix} <red>Player <dark_red>{!player} <red>doesn''t exist or isn''t online!'
 # You can change fields in config.yml.
-# Here you can change line order, add and remove new ones.
+# Here you can change line order and add or remove them.
 command-entity-info-player:
   - '{prefix} <yellow>Player''s info:'
   - '<#8A8FF5>Username: <#D6B9F9>{name}'
-  - '{field-displayname}'
+  - '{field-display-name}'
 #  - '{field-rank}'
   - '{field-uuid}'
   - '{field-ip}'
@@ -230,8 +231,8 @@ command-entity-info-player:
   - '{field-fly}'
 command-entity-info-other:
   - '{prefix} <yellow>Entity''s info:'
+  - '<#8A8FF5>Type: <#D6B9F9>{type}'
   - '<#8A8FF5>Name: <#D6B9F9>{name}'
-  - '{field-displayname}'
   - '{field-uuid}'
   - '{field-health}'
   - '{field-location}'

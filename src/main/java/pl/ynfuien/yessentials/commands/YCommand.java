@@ -76,21 +76,22 @@ public abstract class YCommand implements CommandExecutor, TabCompleter {
         phs.put(pp+"player-uuid", p.getUniqueId());
         phs.put(pp+"player-username", p.getName());
         phs.put(pp+"player-name", p.getName());
-        if (p.isOnline()) phs.put(pp+"player-displayname", MiniMessage.miniMessage().serialize(p.getPlayer().displayName()));
+        if (p.isOnline()) phs.put(pp+"player-display-name", MiniMessage.miniMessage().serialize(p.getPlayer().displayName()));
     }
 
     protected static void addEntityPlaceholders(HashMap<String, Object> phs, Entity e, String placeholderPrefix) {
         String pp = placeholderPrefix == null ? "" : placeholderPrefix + "-";
 
         phs.put(pp+"uuid", e.getUniqueId());
+        phs.put(pp+"type", e.getType().getKey().asString());
         phs.put(pp+"name", e.getName());
         if (e instanceof Player p) {
-            phs.put(pp+"displayname", MiniMessage.miniMessage().serialize(p.displayName()));
+            phs.put(pp+"display-name", MiniMessage.miniMessage().serialize(p.displayName()));
             return;
         }
 
         Component customName = e.customName();
-        phs.put(pp+"displayname", customName != null ? MiniMessage.miniMessage().serialize(customName) : e.getName());
+        phs.put(pp+"display-name", customName != null ? MiniMessage.miniMessage().serialize(customName) : e.getName());
     }
 
 

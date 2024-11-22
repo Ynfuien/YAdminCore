@@ -48,6 +48,8 @@ public class Lang extends LangBase {
 
         //<editor-fold desc="Memory" defaultstate="collapsed">
         COMMAND_MEMORY,
+        COMMAND_MEMORY_CPU_SPARK_ENABLED,
+        COMMAND_MEMORY_CPU_SPARK_DISABLED,
         COMMAND_MEMORY_UPTIME_SECONDS,
         COMMAND_MEMORY_UPTIME_MINUTES,
         COMMAND_MEMORY_UPTIME_HOURS,

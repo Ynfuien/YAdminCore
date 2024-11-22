@@ -8,6 +8,8 @@ public class SparkHook {
     private static Spark spark = null;
 
     public SparkHook() {
+        if (!isSparkAvailable()) return;
+
         spark = SparkProvider.get();
     }
 
@@ -17,5 +19,14 @@ public class SparkHook {
     @Nullable
     public static Spark getSpark() {
         return spark;
+    }
+
+    private static boolean isSparkAvailable() {
+        try {
+            Class.forName("me.lucko.spark.api.SparkProvider");
+            return true;
+        } catch (ClassNotFoundException ignored) {
+            return false;
+        }
     }
 }

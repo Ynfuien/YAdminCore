@@ -57,7 +57,7 @@ commands:
     # You can change, add and remove these fields.
     # The order of the lines can be changed in lang.yml
     fields:
-      displayname: '<#8A8FF5>Display name: <#D6B9F9>{@displayname}'
+      display-name: '<#8A8FF5>Display name: <#D6B9F9>{@display-name}'
       uuid: '<#8A8FF5>UUID: <click:copy_to_clipboard:"{uuid}"><hover:show_text:"<gray>Click to copy!"><#D6B9F9>{uuid}</hover></click>'
       ip: '<#8A8FF5>IP: <click:copy_to_clipboard:"{ip}"><hover:show_text:"<gray>Click to copy!"><#D6B9F9>{ip}</hover></click>'
       time: '<#8A8FF5>Time played: <hover:show_text:"<yellow>It is:<br><aqua>{time-total-years} years<br><gray>or <aqua>{time-total-months} months<br><gray>or <aqua>{time-total-weeks} weeks<br><gray>or <aqua>{time-total-days} days<br><gray>or <aqua>{time-total-hours} hours<br><gray>or <aqua>{time-total-minutes} minutes<br><gray>or <aqua>{time-total-seconds} seconds"><#D6B9F9>{time-days}d and {time-hours}h</hover>'

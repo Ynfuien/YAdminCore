@@ -46,10 +46,8 @@ public class MemoryCommand extends YCommand {
         placeholders.put("uptime", uptimeMessage.get(placeholders));
 
         // TPS
-//        double tps = SparkHook.isEnabled() ? SparkHook.getSpark().tps().poll(StatisticWindow.TicksPerSecond.SECONDS_10) : Bukkit.getTPS()[0];
         double tps = Bukkit.getTPS()[0];
         if (SparkHook.isEnabled()) {
-            YLogger.info("Hook is enabled!");
             tps = SparkHook.getSpark().tps().poll(StatisticWindow.TicksPerSecond.SECONDS_10);
         }
 
@@ -67,8 +65,13 @@ public class MemoryCommand extends YCommand {
         placeholders.put("allocated-memory", totalMemory);
 
         // CPU
-        double cpuUsage = SparkHook.isEnabled() ? SparkHook.getSpark().cpuProcess().poll(StatisticWindow.CpuUsage.MINUTES_1) * 100 : -1;
-        placeholders.put("cpu", cpuUsage == -1 ? "N/A" : df.format(cpuUsage));
+        Lang.Message message = Lang.Message.COMMAND_MEMORY_CPU_SPARK_DISABLED;
+        if (SparkHook.isEnabled()) {
+            message = Lang.Message.COMMAND_MEMORY_CPU_SPARK_ENABLED;
+            double usage = SparkHook.getSpark().cpuProcess().poll(StatisticWindow.CpuUsage.MINUTES_1) * 100;
+            placeholders.put("cpu-usage", df.format(usage));
+        }
+        placeholders.put("cpu", message.get(sender, placeholders));
 
 
         Lang.Message.COMMAND_MEMORY.send(sender, placeholders);

@@ -38,7 +38,7 @@ public class TphereCommand extends YCommand {
         Player player = Bukkit.getPlayer(args[0]);
         placeholders.put("player", args[0]);
         placeholders.put("executor-username", executor.getName());
-        placeholders.put("executor-displayname", MiniMessage.miniMessage().serialize(executor.displayName()));
+        placeholders.put("executor-display-name", MiniMessage.miniMessage().serialize(executor.displayName()));
 
         if (player == null) {
             Lang.Message.COMMAND_TPHERE_FAIL_PLAYER_DOESNT_EXIST.send(sender, placeholders);
@@ -46,7 +46,7 @@ public class TphereCommand extends YCommand {
         }
 
         placeholders.put("player-username", player.getName());
-        placeholders.put("player-displayname", MiniMessage.miniMessage().serialize(player.displayName()));
+        placeholders.put("player-display-name", MiniMessage.miniMessage().serialize(player.displayName()));
 
         // Using scheduler to omit "moved too quickly" console logs
         // Idea from: https://www.spigotmc.org/threads/moved-too-quickly-warn-after-player-teleport.599036/#post-4569377

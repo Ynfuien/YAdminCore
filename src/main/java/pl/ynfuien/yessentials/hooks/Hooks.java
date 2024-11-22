@@ -22,10 +22,11 @@ public class Hooks {
             }
         }
 
-        if (isSparkEnabled()) {
+        Bukkit.getScheduler().runTask(instance, () -> {
             new SparkHook();
-            YLogger.info("[Hooks] Successfully registered hook for Spark!");
-        }
+            if (SparkHook.isEnabled()) {
+                YLogger.info("[Hooks] Successfully registered hook for Spark!");            }
+        });
     }
 
     public static boolean isPapiEnabled() {
@@ -33,9 +34,5 @@ public class Hooks {
     }
     public static boolean isPapiHookEnabled() {
         return papiHook != null;
-    }
-
-    public static boolean isSparkEnabled() {
-        return Bukkit.getPluginManager().isPluginEnabled("spark");
     }
 }
