@@ -77,14 +77,13 @@ public abstract class YCommand implements CommandExecutor, TabCompleter {
 
         phs.put(pp+"uuid", e.getUniqueId());
         phs.put(pp+"type", e.getType().getKey().asString());
-        phs.put(pp+"name", e.getName());
-        if (e instanceof Player p) {
-            phs.put(pp+"display-name", MiniMessage.miniMessage().serialize(p.displayName()));
-            return;
-        }
 
         Component customName = e.customName();
-        phs.put(pp+"display-name", customName != null ? MiniMessage.miniMessage().serialize(customName) : e.getName());
+        phs.put(pp+"name", customName != null ? MiniMessage.miniMessage().serialize(customName) : e.getName());
+
+        if (e instanceof Player p) {
+            phs.put(pp+"display-name", MiniMessage.miniMessage().serialize(p.displayName()));
+        }
     }
 
 
