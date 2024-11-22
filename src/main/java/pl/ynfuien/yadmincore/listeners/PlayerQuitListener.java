@@ -1,6 +1,5 @@
 package pl.ynfuien.yadmincore.listeners;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -26,10 +25,6 @@ public class PlayerQuitListener implements Listener {
         Storage.getUser(uuid).setLogoutLocation(p.getLocation().clone());
         Storage.updateUser(uuid);
 
-        Bukkit.getScheduler().runTaskLaterAsynchronously(instance, () -> {
-            if (p.isOnline()) return;
-
-            Storage.removeUserFromCache(uuid);
-        }, 60 * 20);
+        Storage.removeUserFromCache(uuid);
     }
 }
