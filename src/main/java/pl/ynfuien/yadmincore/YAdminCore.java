@@ -150,9 +150,6 @@ public final class YAdminCore extends JavaPlugin {
     public ConfigHandler getConfigHandler() {
         return configHandler;
     }
-    public FileConfiguration getConfig() {
-        return config.getConfig();
-    }
 
     public Database getDatabase() {
         return database;

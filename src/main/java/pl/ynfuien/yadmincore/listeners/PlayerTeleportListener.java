@@ -1,12 +1,15 @@
 package pl.ynfuien.yadmincore.listeners;
 
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import pl.ynfuien.yadmincore.YAdminCore;
+import pl.ynfuien.yadmincore.config.ConfigName;
 import pl.ynfuien.yadmincore.data.Storage;
+import pl.ynfuien.ydevlib.config.ConfigObject;
 import pl.ynfuien.ydevlib.messages.YLogger;
 
 import java.util.ArrayList;
@@ -19,21 +22,12 @@ public class PlayerTeleportListener implements Listener {
     public PlayerTeleportListener(YAdminCore instance) {
         this.instance = instance;
 
-        updateConfig(instance.getConfig().getConfigurationSection("commands.back"));
-    }
+        FileConfiguration config = instance.getConfigHandler().getConfig(ConfigName.CONFIG);
+        ConfigurationSection section = config.getConfigurationSection("commands.back");
+        if (section == null) return;
 
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
-    private void onPlayerTeleport(PlayerTeleportEvent event) {
-        if (!teleportCauses.contains(event.getCause())) return;
-        if (event.getFrom().equals(event.getTo())) return;
+        List<String> list = section.getStringList("teleport-causes");
 
-        Storage.getUser(event.getPlayer().getUniqueId()).setLastLocation(event.getFrom().clone());
-    }
-
-    public void updateConfig(ConfigurationSection config) {
-        List<String> list = config.getStringList("teleport-causes");
-
-        teleportCauses.clear();
         for (String item : list) {
             try {
                 PlayerTeleportEvent.TeleportCause cause = PlayerTeleportEvent.TeleportCause.valueOf(item.toUpperCase());
@@ -42,5 +36,13 @@ public class PlayerTeleportListener implements Listener {
                 YLogger.warn(String.format("Teleport cause '%s' for command 'back' is incorrect!", item));
             }
         }
+    }
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    private void onPlayerTeleport(PlayerTeleportEvent event) {
+        if (!teleportCauses.contains(event.getCause())) return;
+        if (event.getFrom().equals(event.getTo())) return;
+
+        Storage.getUser(event.getPlayer().getUniqueId()).setLastLocation(event.getFrom().clone());
     }
 }
