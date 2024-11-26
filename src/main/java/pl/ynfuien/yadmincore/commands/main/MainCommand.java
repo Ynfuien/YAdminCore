@@ -15,9 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MainCommand implements CommandExecutor, TabCompleter {
-    private static final HelpSubcommand helpCommand = new HelpSubcommand();
     public static Subcommand[] subcommands = {
-            helpCommand,
             new ReloadSubcommand(),
             new VersionSubcommand()
     };
@@ -28,7 +26,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
 
         // Run help subcommand if none is provided
         if (args.length == 0) {
-            helpCommand.run(sender, args, placeholders);
+            Lang.Message.COMMAND_MAIN_USAGE.send(sender, placeholders);
             return true;
         }
 
@@ -47,16 +45,13 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        Lang.Message.COMMANDS_INCORRECT.send(sender, placeholders);
+        Lang.Message.COMMAND_MAIN_USAGE.send(sender, placeholders);
         return true;
     }
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
         List<String> completions = new ArrayList<>();
-
-        if (args.length == 0) return completions;
-
 
         // Get commands the sender has permissions for
         List<Subcommand> canUse = Arrays.stream(subcommands).filter(cmd -> sender.hasPermission(cmd.permission())).toList();
