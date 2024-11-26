@@ -22,7 +22,7 @@ public class ItemCommand extends YCommand {
 
     @Override
     protected void run(@NotNull CommandSender sender, @NotNull String[] args, @NotNull HashMap<String, Object> placeholders) {
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player p)) {
             Lang.Message.COMMAND_ITEM_FAIL_NOT_PLAYER.send(sender, placeholders);
             return;
         }
@@ -58,7 +58,6 @@ public class ItemCommand extends YCommand {
             }
         }
 
-        Player p = (Player) sender;
         ItemGiver.give(p, new ItemStack(item, amount), config.getBoolean("item.extend-max-stack-size"));
 
         placeholders.put("item", item.name().toLowerCase());

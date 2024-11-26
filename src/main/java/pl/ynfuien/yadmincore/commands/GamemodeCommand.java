@@ -101,7 +101,7 @@ public class GamemodeCommand extends YCommand {
         int gmNumber = -1;
         try {
             gmNumber = Integer.parseInt(gm);
-        } catch (NumberFormatException e) {}
+        } catch (NumberFormatException ignored) {}
 
         GameMode gamemode = GameMode.getByValue(gmNumber);
         if (gamemode == null) {

@@ -147,7 +147,7 @@ public abstract class YCommand implements CommandExecutor, TabCompleter {
                     }
                     return vanillaCompletions;
                 }
-            } catch (CommandException | IllegalArgumentException e) {}
+            } catch (CommandException | IllegalArgumentException ignored) {}
         }
 
         for (String selector : new String[] {"@p", "@a", "@r", "@s", "@e"}) {

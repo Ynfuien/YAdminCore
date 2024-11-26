@@ -31,7 +31,7 @@ public class TpCommand extends YCommand {
     private final static String PERMISSION_TP_LOCATION = PERMISSION_BASE + ".location";
     private final static String PERMISSION_USE_SELECTORS = PERMISSION_BASE + ".selectors";
 
-    private static final Pattern locationArgPattern = Pattern.compile("^[\\d\\-\\.,~]+$");
+    private static final Pattern locationArgPattern = Pattern.compile("^[\\d\\-.,~]+$");
 
     private static final DoubleFormatter df = new DoubleFormatter().setMaxDecimalPlaces(2);
 
@@ -55,12 +55,11 @@ public class TpCommand extends YCommand {
 
         // Self tp to another player/entity
         if (args.length == 1 || (!sender.hasPermission(PERMISSION_TP_OTHERS) && !canTpLocation)) {
-            if (!(sender instanceof Player)) {
+            if (!(sender instanceof Player p)) {
                 Lang.Message.COMMAND_TP_FAIL_ONLY_PLAYER.send(sender, placeholders);
                 return;
             }
 
-            Player p = (Player) sender;
             String destinationArg = args[0];
             List<Entity> destinationEntities = getSelectedEntities(sender, destinationArg, PERMISSION_USE_SELECTORS);
             placeholders.put("player", destinationArg);

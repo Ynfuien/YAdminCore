@@ -19,6 +19,7 @@ import pl.ynfuien.yadmincore.utils.Lang;
 import pl.ynfuien.ydevlib.messages.Messenger;
 import pl.ynfuien.ydevlib.utils.DoubleFormatter;
 
+import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -95,7 +96,8 @@ public class EntityCommand extends YCommand {
 
         if (target instanceof Player p) {
             // IP
-            String ip = p.getAddress().getAddress().getHostAddress();
+            InetSocketAddress socketAddress = p.getAddress();
+            String ip = socketAddress != null ? socketAddress.getAddress().getHostAddress() : "N/A";
             placeholders.put("ip", ip);
 
             // Time
@@ -194,6 +196,8 @@ public class EntityCommand extends YCommand {
         ConfigurationSection fieldsSection = config.getConfigurationSection("entity.fields");
 
         HashMap<String, String> fields = new HashMap<>();
+        if (fieldsSection == null) return fields;
+
         for (String fieldName : fieldsSection.getKeys(false)) {
             fields.put(fieldName, fieldsSection.getString(fieldName));
         }
