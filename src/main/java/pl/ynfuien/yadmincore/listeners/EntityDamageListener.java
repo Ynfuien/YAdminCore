@@ -10,9 +10,8 @@ import pl.ynfuien.yadmincore.data.Storage;
 public class EntityDamageListener implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     private void onEntityDamage(EntityDamageEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
+        if (!(event.getEntity() instanceof Player p)) return;
 
-        Player p = (Player) event.getEntity();
         if (!Storage.getUser(p.getUniqueId()).isGodModeEnabled()) return;
 
         event.setCancelled(true);
