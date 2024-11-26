@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class TpofflineCommand extends YCommand {
-    public TpofflineCommand(YAdminCore instance) {
+public class TpOfflineCommand extends YCommand {
+    public TpOfflineCommand(YAdminCore instance) {
         super(instance);
     }
 

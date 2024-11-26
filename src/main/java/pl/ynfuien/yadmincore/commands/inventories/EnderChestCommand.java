@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class EnderchestCommand extends YCommand {
-    public EnderchestCommand(YAdminCore instance) {
+public class EnderChestCommand extends YCommand {
+    public EnderChestCommand(YAdminCore instance) {
         super(instance);
     }
 

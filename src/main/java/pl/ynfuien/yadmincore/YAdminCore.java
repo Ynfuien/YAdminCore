@@ -72,14 +72,14 @@ public final class YAdminCore extends JavaPlugin {
             put("item", new ItemCommand(instance));
             put("memory", new MemoryCommand(instance));
             put("tp", new TpCommand(instance));
-            put("tphere", new TphereCommand(instance));
+            put("tphere", new TpHereCommand(instance));
             put("god", new GodCommand(instance));
             put("gm", new GamemodeCommand(instance));
             put("back", new BackCommand(instance));
-            put("tpoffline", new TpofflineCommand(instance));
+            put("tpoffline", new TpOfflineCommand(instance));
             put("anvil", new AnvilCommand(instance));
             put("cartographytable", new CartographyTableCommand(instance));
-            put("enderchest", new EnderchestCommand(instance));
+            put("enderchest", new EnderChestCommand(instance));
             put("grindstone", new GrindstoneCommand(instance));
             put("loom", new LoomCommand(instance));
             put("smithingtable", new SmithingTableCommand(instance));

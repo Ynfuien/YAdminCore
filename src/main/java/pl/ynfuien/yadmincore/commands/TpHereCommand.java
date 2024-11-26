@@ -16,14 +16,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class TphereCommand extends YCommand {
-    public TphereCommand(YAdminCore instance) {
+public class TpHereCommand extends YCommand {
+    public TpHereCommand(YAdminCore instance) {
         super(instance);
     }
 
     @Override
     protected void run(@NotNull CommandSender sender, @NotNull String[] args, @NotNull HashMap<String, Object> placeholders) {
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player executor)) {
             Lang.Message.COMMAND_TPHERE_FAIL_NEED_PLAYER.send(sender, placeholders);
             return;
         }
@@ -34,7 +34,6 @@ public class TphereCommand extends YCommand {
         }
 
 
-        Player executor = (Player) sender;
         Player player = Bukkit.getPlayer(args[0]);
         placeholders.put("player", args[0]);
         placeholders.put("executor-username", executor.getName());

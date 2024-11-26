@@ -20,12 +20,12 @@ public class SmithingTableCommand extends YCommand {
 
     @Override
     protected void run(@NotNull CommandSender sender, @NotNull String[] args, @NotNull HashMap<String, Object> placeholders) {
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player p)) {
             Lang.Message.COMMAND_INVENTORIES_FAIL_ONLY_PLAYER.send(sender, placeholders);
             return;
         }
 
-        ((Player) sender).openSmithingTable(null, true);
+        p.openSmithingTable(null, true);
     }
 
 
