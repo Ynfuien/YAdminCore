@@ -59,6 +59,15 @@ commands:
     description: Changes your gamemode
     permission: yadmincore.gamemode
 
+  entity:
+    aliases: [entityinfo, player, playerinfo, whois]
+    description: Gets info about the entity/player
+    permission: yadmincore.entity
+
+  fly:
+    description: Toggles fly mode for the player
+    permission: yadmincore.fly
+
   anvil:
     description: Opens an anvil
     permission: yadmincore.anvil
@@ -92,12 +101,3 @@ commands:
     aliases: [wb, craft]
     description: Opens a workbench
     permission: yadmincore.workbench
-
-  entity:
-    aliases: [entityinfo, player, playerinfo, whois]
-    description: Gets info about the entity/player
-    permission: yadmincore.entity
-
-  fly:
-    description: Toggles fly mode for the player
-    permission: yadmincore.fly

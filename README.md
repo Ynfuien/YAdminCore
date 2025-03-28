@@ -8,10 +8,12 @@ Plugin requires at least [Paper](https://github.com/PaperMC/Paper), won't work o
 - memory
 - god
 - gamemode
+- fly
 - tp - In vanilla style
 - tphere
 - tpoffline
 - back - Teleports back, based on the last teleport event
+- entityinfo / playerinfo
 - workbench, enderchest, anvil, grindstone, stonecutter, smithingtable, cartographytable, loom
 
 ### Other features
