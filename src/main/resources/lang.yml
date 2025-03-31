@@ -150,7 +150,7 @@ command-gm-spectator: 'spectator'
 command-inventories-fail-only-player: '{prefix} <red>You need to be a player, to use this command!'
 
 # Entity
-command-entity-usage: '{prefix} <gray>Use /{command} <player | uuid>, to check their informations!'
+command-entity-usage: '{prefix} <gray>Use /{command} <player | uuid>, to check player/entity info!'
 command-entity-fail-selector-no-targets: '{prefix} <red>Selector couldn''t find any entities!'
 command-entity-fail-selector-many-targets: '{prefix} <red>Selected many targets, there can only be one!'
 command-entity-fail-selector-target-doesnt-exist: '{prefix} <red>Provided target doesn''t exist!'
@@ -192,3 +192,12 @@ command-fly-success-other: '{prefix} <aqua>Successfully {action} <aqua>fly mode 
 command-fly-success-receive: '{prefix} <aqua>Your fly mode has been {action}<aqua>!'
 command-fly-enabled: '<green>enabled'
 command-fly-disabled: '<red>disabled'
+
+# Enchant
+command-enchant-usage: '{prefix} <gray>Use /{command} <enchant> <level>, to enchant your item!'
+command-enchant-fail-not-a-player: '{prefix} <red>You need to be a player, to use this command!'
+command-enchant-fail-no-item: '{prefix} <red>You need to hold an item you want to enchant!'
+command-enchant-fail-incorrect-enchant: '{prefix} <red>Provided enchant is incorrect!'
+command-enchant-fail-incorrect-level: '{prefix} <red>Provided enchant level is incorrect!'
+command-enchant-success: '{prefix} <aqua>Enchanted your <dark_aqua>{item}</dark_aqua> with <dark_aqua>{enchant} {level}</dark_aqua>!'
+

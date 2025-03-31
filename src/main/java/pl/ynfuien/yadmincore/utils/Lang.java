@@ -154,6 +154,15 @@ public class Lang extends LangBase {
         COMMAND_FLY_ENABLED,
         COMMAND_FLY_DISABLED,
         //</editor-fold>
+
+        //<editor-fold desc="Enchant" defaultstate="collapsed">
+        COMMAND_ENCHANT_USAGE,
+        COMMAND_ENCHANT_FAIL_NOT_A_PLAYER,
+        COMMAND_ENCHANT_FAIL_NO_ITEM,
+        COMMAND_ENCHANT_FAIL_INCORRECT_ENCHANT,
+        COMMAND_ENCHANT_FAIL_INCORRECT_LEVEL,
+        COMMAND_ENCHANT_SUCCESS,
+        //</editor-fold>
         ;
 
         /**
