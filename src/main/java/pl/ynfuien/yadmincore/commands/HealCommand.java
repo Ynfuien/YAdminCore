@@ -62,7 +62,7 @@ public class HealCommand extends YCommand {
     private void heal(Player p, HashMap<String, Object> placeholders) {
         // Health
         if (config.getBoolean("heal.heal")) {
-            AttributeInstance att = p.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+            AttributeInstance att = p.getAttribute(Attribute.MAX_HEALTH);
             double maxHealth = att == null ? 20 : att.getValue();
             double health = p.getHealth();
             double healed = maxHealth - health;

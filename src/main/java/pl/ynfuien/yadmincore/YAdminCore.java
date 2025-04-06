@@ -87,6 +87,7 @@ public final class YAdminCore extends JavaPlugin {
             put("workbench", new WorkbenchCommand(instance));
             put("entity", new EntityCommand(instance));
             put("fly", new FlyCommand(instance));
+            put("enchant", new EnchantCommand(instance));
         }};
 
         for (String name : commands.keySet()) {

@@ -68,6 +68,10 @@ commands:
     description: Toggles fly mode for the player
     permission: yadmincore.fly
 
+  enchant:
+    description: Enchants item in the hand
+    permission: yadmincore.enchant
+
   anvil:
     description: Opens an anvil
     permission: yadmincore.anvil

@@ -75,7 +75,7 @@ public class EntityCommand extends YCommand {
 
         // Health
         if (target instanceof LivingEntity livingEntity) {
-            AttributeInstance att = livingEntity.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+            AttributeInstance att = livingEntity.getAttribute(Attribute.MAX_HEALTH);
             double maxHealth = att == null ? 20 : att.getValue();
             double health = livingEntity.getHealth();
             placeholders.put("health-max-points", df.format(maxHealth));

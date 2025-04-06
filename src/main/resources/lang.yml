@@ -194,7 +194,7 @@ command-fly-enabled: '<green>enabled'
 command-fly-disabled: '<red>disabled'
 
 # Enchant
-command-enchant-usage: '{prefix} <gray>Use /{command} <enchant> <level>, to enchant your item!'
+command-enchant-usage: '{prefix} <gray>Use /{command} <enchant> [level], to enchant your item!'
 command-enchant-fail-not-a-player: '{prefix} <red>You need to be a player, to use this command!'
 command-enchant-fail-no-item: '{prefix} <red>You need to hold an item you want to enchant!'
 command-enchant-fail-incorrect-enchant: '{prefix} <red>Provided enchant is incorrect!'

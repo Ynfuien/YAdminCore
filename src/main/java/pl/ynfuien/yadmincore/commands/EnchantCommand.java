@@ -1,5 +1,7 @@
 package pl.ynfuien.yadmincore.commands;
 
+import io.papermc.paper.registry.RegistryAccess;
+import io.papermc.paper.registry.RegistryKey;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
@@ -19,6 +21,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class EnchantCommand extends YCommand {
+    private static final Registry<@NotNull Enchantment> enchantmentRegistry = RegistryAccess.registryAccess().getRegistry(RegistryKey.ENCHANTMENT);
+
     public EnchantCommand(YAdminCore instance) {
         super(instance);
     }
@@ -29,8 +33,7 @@ public class EnchantCommand extends YCommand {
             Lang.Message.COMMAND_ENCHANT_FAIL_NOT_A_PLAYER.send(sender, placeholders);
             return;
         }
-
-        if (args.length < 2) {
+        if (args.length == 0) {
             Lang.Message.COMMAND_ENCHANT_USAGE.send(sender, placeholders);
             return;
         }
@@ -56,36 +59,31 @@ public class EnchantCommand extends YCommand {
         if (args.length > 2) return completions;
 
         // Enchantments
+        String arg1 = args[0].toLowerCase();
         if (args.length == 1) {
-            Enchantment[] enchantments = Registry.ENCHANTMENT.stream().toArray(Enchantment[]::new);
-            String arg1 = args[0].toLowerCase();
+            Enchantment[] enchantments = enchantmentRegistry.stream().toArray(Enchantment[]::new);
 
             for (Enchantment enchantment : enchantments) {
                 NamespacedKey namespacedKey = enchantment.getKey();
-//                if (item.isAir()) continue;
-//                if (!item.isItem()) continue;
 
-//                String name = item.name().toLowerCase();
-//                if (name.startsWith(arg1)) {
-//                    completions.add(name);
-//                }
+                String key = namespacedKey.asString();
+                if (key.contains(arg1)) completions.add(key);
             }
 
             return completions;
         }
 
-//        // Level
-//        if (args.length == 2) {
-//            String arg2 = args[1];
-//
-//            for (String amount : new String[] {"1", "16", "32", "64"}) {
-//                if (amount.startsWith(arg2)) {
-//                    completions.add(amount);
-//                }
-//            }
-//
-//            return completions;
-//        }
+        NamespacedKey namespacedKey = NamespacedKey.fromString(arg1);
+        if (namespacedKey == null) return completions;
+
+        Enchantment enchantment = enchantmentRegistry.get(namespacedKey);
+        if (enchantment == null) return completions;
+
+        String arg2 = args[1];
+        for (int i = 0; i < enchantment.getMaxLevel(); i++) {
+            String stringValue = String.valueOf(i + 1);
+            if (stringValue.startsWith(arg2)) completions.add(stringValue);
+        }
 
         return completions;
     }
