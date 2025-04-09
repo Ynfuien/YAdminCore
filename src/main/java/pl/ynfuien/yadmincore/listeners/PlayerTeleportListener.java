@@ -9,7 +9,6 @@ import org.bukkit.event.player.PlayerTeleportEvent;
 import pl.ynfuien.yadmincore.YAdminCore;
 import pl.ynfuien.yadmincore.config.ConfigName;
 import pl.ynfuien.yadmincore.data.Storage;
-import pl.ynfuien.ydevlib.config.ConfigObject;
 import pl.ynfuien.ydevlib.messages.YLogger;
 
 import java.util.ArrayList;

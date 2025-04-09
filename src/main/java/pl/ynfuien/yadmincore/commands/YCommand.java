@@ -25,8 +25,8 @@ public abstract class YCommand implements CommandExecutor, TabCompleter {
         this.instance = instance;
     }
 
-    public static void updateConfig() {
-        config = YAdminCore.getInstance().getConfig().getConfigurationSection("commands");
+    public static void setConfig(ConfigurationSection config) {
+        YCommand.config = config;
     }
 
     @Override

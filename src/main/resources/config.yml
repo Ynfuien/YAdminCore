@@ -71,3 +71,8 @@ commands:
 #      supercoins: '<#8A8FF5>Supercoins: <dark_purple>%yc_balance_supercoin% SC'
 #      money: '<#8A8FF5>Money: <gold>%vault_eco_balance_formatted%$'
 #      rank: '<#8A8FF5>Rank: <#D6B9F9>%vault_group_capital%'
+
+  enchant:
+    # Whether to show only enchantments that can be used on a held item.
+    # Takes into account permissions for incompatible/unsafe enchantments.
+    smart-tab-completions: true

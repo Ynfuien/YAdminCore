@@ -37,6 +37,7 @@ public final class YAdminCore extends JavaPlugin {
     public void onEnable() {
         instance = this;
         YLogger.setup("<dark_aqua>[<aqua>Y<red>AdminCore<dark_aqua>] <white>", getComponentLogger());
+        YLogger.setDebugging(true);
 
         loadConfigs();
         loadLang();
@@ -52,7 +53,7 @@ public final class YAdminCore extends JavaPlugin {
 
         Hooks.load(this);
 
-        YCommand.updateConfig();
+        YCommand.setConfig(config.getConfig().getConfigurationSection("commands"));
 
         YLogger.info("Plugin successfully <green>enabled<white>!");
     }
@@ -138,7 +139,7 @@ public final class YAdminCore extends JavaPlugin {
         // Reload all configs
         configHandler.reloadAll();
 
-        YCommand.updateConfig();
+        YCommand.setConfig(config.getConfig().getConfigurationSection("commands"));
 
         // Reload lang
         instance.loadLang();
