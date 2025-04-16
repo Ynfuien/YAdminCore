@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class HealCommand extends YCommand {
-    private static final String PERMISSION_OTHERS = "yadmincore.command.heal.others";
+    private static final String PERMISSION_OTHERS = "yadmincore.heal.others";
     private final DoubleFormatter df = new DoubleFormatter();
 
     public HealCommand(YAdminCore instance) {

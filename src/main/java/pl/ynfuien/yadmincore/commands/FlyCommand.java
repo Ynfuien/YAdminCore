@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class FlyCommand extends YCommand {
-    private static final String PERMISSION_OTHERS = "yadmincore.command.fly.others";
+    private static final String PERMISSION_OTHERS = "yadmincore.fly.others";
     private static final Lang.Message ENABLED_MSG = Lang.Message.COMMAND_FLY_ENABLED;
     private static final Lang.Message DISABLED_MSG = Lang.Message.COMMAND_FLY_DISABLED;
 

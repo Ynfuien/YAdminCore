@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class FeedCommand extends YCommand {
-    private static final String PERMISSION_OTHERS = "yadmincore.command.feed.others";
+    private static final String PERMISSION_OTHERS = "yadmincore.feed.others";
     public FeedCommand(YAdminCore instance) {
         super(instance);
     }

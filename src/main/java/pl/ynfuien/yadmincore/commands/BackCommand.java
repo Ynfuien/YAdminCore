@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class BackCommand extends YCommand {
-    private static final String PERMISSION_OTHERS = "yadmincore.command.back.others";
+    private static final String PERMISSION_OTHERS = "yadmincore.back.others";
     public BackCommand(YAdminCore instance) {
         super(instance);
     }

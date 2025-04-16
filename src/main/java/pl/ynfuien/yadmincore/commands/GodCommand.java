@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class GodCommand extends YCommand {
-    private static final String PERMISSION_OTHERS = "yadmincore.command.god.others";
+    private static final String PERMISSION_OTHERS = "yadmincore.god.others";
     private final static Lang.Message enabledMsg = Lang.Message.COMMAND_GOD_ENABLED;
     private final static Lang.Message disabledMsg = Lang.Message.COMMAND_GOD_DISABLED;
 
