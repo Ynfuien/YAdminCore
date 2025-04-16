@@ -12,7 +12,7 @@ import java.util.List;
 public class VersionSubcommand implements Subcommand {
     @Override
     public String permission() {
-        return "yadmincore.command.main."+name();
+        return null;
     }
 
     @Override

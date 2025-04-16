@@ -35,11 +35,6 @@ public class MainCommand implements CommandExecutor, TabCompleter {
         for (Subcommand cmd : subcommands) {
             if (!cmd.name().equals(arg1)) continue;
 
-            if (!sender.hasPermission(cmd.permission())) {
-                Lang.Message.COMMANDS_NO_PERMISSION.send(sender, placeholders);
-                return true;
-            }
-
             String[] argsLeft = Arrays.copyOfRange(args, 1, args.length);
             cmd.run(sender, argsLeft, placeholders);
             return true;

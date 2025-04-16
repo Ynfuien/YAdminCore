@@ -14,7 +14,7 @@ import java.util.List;
 public class ReloadSubcommand implements Subcommand {
     @Override
     public String permission() {
-        return "yadmincore.main."+name();
+        return null;
     }
 
     @Override

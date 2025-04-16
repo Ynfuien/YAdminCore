@@ -11,7 +11,7 @@ commands:
   yadmincore:
     aliases: [yac]
     description: Plugin's main command
-    permission: yadmincore.main
+    permission: yadmincore.reload
 
   heal:
     description: Heals player
