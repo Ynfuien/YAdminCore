@@ -64,7 +64,7 @@ command-item-success: '{prefix} <aqua>You just got yourself <dark_aqua>{amount} 
 
 # Memory
 command-memory:
-  - '{prefix} <gold>Info about server:'
+  - '{prefix} <gold>Info about the server:'
   - '<yellow>Uptime: <white><hover:show_text:"<gray>Days: <white>{days}<newline><gray>Hours: <white>{hours}<newline><gray>Minutes: <white>{minutes}<newline><gray>Seconds: <white>{seconds}">{uptime}</hover>'
   - '<yellow>TPS: <white>{tps}/20'
   - '<yellow>Memory: <hover:show_text:"<dark_gray>Used memory: <gray>{used-memory}M<newline><dark_gray>Free memory: <gray>{free-memory}M<newline><dark_gray>Max memory: <gray>{max-memory}M<newline><dark_gray>Allocated memory: <gray>{allocated-memory}M"><white>{used-memory}M/{max-memory}M <gray>({allocated-memory}M)</hover>'
