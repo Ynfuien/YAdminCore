@@ -19,9 +19,9 @@ public class UserPlaceholders implements Placeholder {
     public String getPlaceholder(String id, OfflinePlayer p) {
         User user = Storage.getUser(p.getUniqueId());
 
-        // Placeholder: %yadmincore_user_godmode%
-        // Returns: whether user has godmode enabled
-        if (id.equals("godmode")) {
+        // Placeholder: %yadmincore_user_god-mode%
+        // Returns: whether user has god mode enabled
+        if (id.equals("god-mode")) {
             return user.isGodModeEnabled() ? "yes" : "no";
         }
 

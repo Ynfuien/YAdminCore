@@ -41,9 +41,9 @@ public class PlaceholderAPIHook extends PlaceholderExpansion {
     }
 
     // User
-    // %yadmincore_user_godmode%
-    // %yadmincore_user_lastlocation%
-    // %yadmincore_user_logoutlocation%
+    // %yadmincore_user_god-mode%
+    // %yadmincore_user_last-location%
+    // %yadmincore_user_logout-location%
 
     @Override
     public String onRequest(OfflinePlayer p, @NotNull String params) {
