@@ -1,3 +1,6 @@
+[![Discord](https://img.shields.io/discord/1236019317208776786?style=flat&logo=discord&label=Discord&color=%235d6af2
+)](https://discord.gg/kZJhKZ48j8)
+
 # YAdminCore
 Plugin with, in my opinion, essential commands for server admins. Using permissions for different command functionalities you should be able to precisely specify what admins can do what.
 
