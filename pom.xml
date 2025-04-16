@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>YAdminCore</name>
-    <description>Essential things that should be available for admins</description>
+    <description>Essential commands for server admins</description>
     <url>https://modrinth.com/project/yadmincore</url>
 
     <properties>
