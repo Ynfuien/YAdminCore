@@ -37,7 +37,6 @@ public final class YAdminCore extends JavaPlugin {
     public void onEnable() {
         instance = this;
         YLogger.setup("<dark_aqua>[<aqua>Y<red>AdminCore<dark_aqua>] <white>", getComponentLogger());
-        YLogger.setDebugging(true);
 
         loadConfigs();
         loadLang();
