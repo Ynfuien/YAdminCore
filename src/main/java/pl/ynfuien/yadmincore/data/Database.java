@@ -67,7 +67,7 @@ public abstract class Database {
             if (user.getLastLocation() != null) lastLocation = JSONObject.toJSONString(user.getLastLocation().serialize());
             stmt.setString(2, lastLocation);
             String logoutLocation = null;
-            if (user.getLastLocation() != null) logoutLocation = JSONObject.toJSONString(user.getLogoutLocation().serialize());
+            if (user.getLogoutLocation() != null) logoutLocation = JSONObject.toJSONString(user.getLogoutLocation().serialize());
             stmt.setString(3, logoutLocation);
             stmt.setString(4, uuid.toString());
             stmt.execute();
