@@ -29,6 +29,7 @@ public class MysqlDatabase extends Database {
             dbSource = new HikariDataSource(dbConfig);
         } catch (Exception e) {
             YLogger.error("Plugin couldn't connect to a database! Please check connection data, because some plugin's functionality requires the database!");
+            e.printStackTrace();
             return false;
         }
 
